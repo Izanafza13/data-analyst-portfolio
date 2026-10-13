@@ -1,1 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portofolio Data Analyst - Hamizan Afza Al Isyraqi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#06090a;--panel:#0c1312;--panel-2:#0f1917;--card:#0d1614;
+  --stroke:rgba(200,255,220,0.10);--stroke-strong:rgba(140,255,140,0.35);
+  --ink:#e6ece8;--ink-dim:rgba(230,236,232,0.58);--ink-faint:rgba(230,236,232,0.34);
+  --signal:#8dff6a;--signal-dim:rgba(141,255,106,0.14);--amber:#ffb347;
+  --disp:'Chakra Petch',sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--sans:'Inter',ui-sans-serif,sans-serif;
+  --display:clamp(38px,6vw,72px);--h2:clamp(28px,3.6vw,40px);--max:1140px;--gap:88px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--void);color:var(--ink);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(rgba(200,255,220,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,220,0.035) 1px,transparent 1px);background-size:42px 42px;}
+a{color:inherit;text-decoration:none;}
+.w{max-width:var(--max);margin:0 auto;padding:0 32px;}
+h1,h2,h3{font-family:var(--disp);font-weight:600;letter-spacing:-0.01em;}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px;}
 
+.strip{background:var(--panel);border-bottom:1px solid var(--stroke);}
+.strip .w{display:flex;align-items:center;justify-content:space-between;height:36px;font-family:var(--mono);font-size:11.5px;color:var(--ink-dim);}
+.strip .dot{width:6px;height:6px;border-radius:50%;background:var(--signal);display:inline-block;margin-right:8px;box-shadow:0 0 8px var(--signal);}
+.strip a:hover{color:var(--signal);}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(6,9,10,0.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--stroke);height:66px;}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:100%;}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:14px;letter-spacing:0.02em;}
+.brand .id{width:9px;height:9px;background:var(--signal);box-shadow:0 0 10px var(--signal);flex:none;}
+.nav-links{display:flex;gap:26px;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);}
+.nav-links a:hover{color:var(--signal);}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--stroke-strong);cursor:pointer;font-family:var(--mono);font-size:13px;border-radius:2px;padding:12px 20px;background:transparent;color:var(--ink);transition:all .18s ease;}
+.btn:hover{background:var(--signal-dim);border-color:var(--signal);color:var(--signal);}
+.btn-solid{background:var(--signal);border-color:var(--signal);color:#04140a;font-weight:600;}
+.btn-solid:hover{background:var(--ink);border-color:var(--ink);color:var(--void);}
+.nav-cta{display:none;}
+@media(min-width:760px){.nav-cta{display:inline-flex;}}
+
+.hero{position:relative;padding:88px 0 70px;border-bottom:1px solid var(--stroke);overflow:hidden;}
+.hero .frame{position:absolute;inset:24px;border:1px solid var(--stroke);pointer-events:none;}
+.hero .frame::before,.hero .frame::after{content:'';position:absolute;width:18px;height:18px;border:2px solid var(--signal);opacity:0.7;}
+.hero .frame::before{top:-2px;left:-2px;border-right:none;border-bottom:none;}
+.hero .frame::after{bottom:-2px;right:-2px;border-left:none;border-top:none;}
+.hero .w{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr 1fr;gap:52px;align-items:end;}
+.tag-line{font-family:var(--mono);font-size:13px;color:var(--signal);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.tag-line .cursor{width:8px;height:15px;background:var(--signal);animation:blink 1s steps(1) infinite;}
+@keyframes blink{50%{opacity:0;}}
+@media(prefers-reduced-motion:reduce){.tag-line .cursor{animation:none;}html{scroll-behavior:auto;}}
+.hero h1{font-size:var(--display);line-height:1.02;margin-bottom:22px;text-transform:uppercase;}
+.hero .role{font-size:17.5px;color:var(--ink-dim);max-width:540px;margin-bottom:30px;}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px;}
+.hero-meta{display:flex;gap:22px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--ink-dim);border-top:1px solid var(--stroke);padding-top:18px;}
+.hero-meta b{color:var(--signal);font-weight:500;}
+
+.hero-card{background:var(--panel-2);border:1px solid var(--stroke);border-radius:2px;padding:24px;position:relative;}
+.hero-card .corner{position:absolute;width:10px;height:10px;border:1px solid var(--stroke-strong);}
+.hero-card .corner.tl{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+.hero-card .corner.br{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+.hero-card .tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--amber);border:1px solid rgba(255,179,71,0.35);padding:5px 10px;border-radius:2px;margin-bottom:16px;}
+.hero-card .console{font-family:var(--mono);font-size:13px;background:var(--void);border:1px solid var(--stroke);border-radius:2px;padding:16px;line-height:2;margin-bottom:16px;}
+.hero-card .console .ok{color:var(--signal);}
+.hero-card .console .k{color:var(--ink-faint);}
+.hero-card p.note{font-size:13.5px;color:var(--ink-dim);}
+
+section{padding:var(--gap) 0;border-bottom:1px solid var(--stroke);}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:44px;}
+.sec-head .num{font-family:var(--mono);font-size:12.5px;color:var(--signal);display:block;margin-bottom:10px;letter-spacing:0.03em;}
+.sec-head h2{font-size:var(--h2);max-width:640px;text-transform:uppercase;}
+.sec-head p{max-width:300px;font-size:13.5px;color:var(--ink-dim);font-family:var(--mono);text-align:right;}
+
+.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;}
+.about-lead{font-family:var(--disp);font-size:25px;line-height:1.5;font-weight:500;}
+.about-lead .hl{color:var(--signal);}
+.about-side{border-top:1px solid var(--stroke);}
+.about-stat{display:flex;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--stroke);}
+.about-stat .v{font-family:var(--mono);font-size:26px;color:var(--signal);flex:none;width:104px;}
+.about-stat .l{font-size:13.5px;color:var(--ink-dim);}
+
+.work-list{display:flex;flex-direction:column;}
+.work-item{display:grid;grid-template-columns:130px 1fr auto;gap:26px;align-items:start;padding:26px 22px;border:1px solid transparent;border-top:1px solid var(--stroke);transition:border-color .18s ease,background .18s ease;}
+.work-item:last-child{border-bottom:1px solid var(--stroke);}
+a.work-item:hover{border-color:var(--stroke-strong);background:var(--panel);}
+.work-item .role{font-family:var(--mono);font-size:11px;color:var(--amber);padding-top:4px;}
+.work-item h3{font-size:20px;margin-bottom:8px;text-transform:uppercase;}
+.work-item p{font-size:14px;color:var(--ink-dim);max-width:580px;margin-bottom:12px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-family:var(--mono);font-size:11px;border:1px solid var(--stroke);border-radius:2px;padding:4px 9px;color:var(--ink-dim);}
+.work-item .go{font-family:var(--mono);font-size:11px;color:var(--ink-dim);border:1px solid var(--stroke);border-radius:2px;padding:8px 12px;flex:none;}
+a.work-item:hover .go{color:var(--signal);border-color:var(--signal);}
+.work-item.ghost{border-top-style:dashed;color:var(--ink-faint);font-family:var(--mono);font-size:12.5px;}
+.work-item.ghost .role{color:var(--ink-faint);}
+
+.tools{border-top:1px solid var(--stroke);}
+.tool-row{display:grid;grid-template-columns:200px 1fr;gap:26px;padding:16px 0;border-bottom:1px solid var(--stroke);}
+.tool-row .n{font-family:var(--mono);font-size:14px;color:var(--signal);}
+.tool-row .u{font-size:14px;color:var(--ink-dim);}
+
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.cert-card{background:var(--card);border:1px solid var(--stroke);border-radius:2px;padding:20px;}
+.cert-card h4{font-family:var(--sans);font-weight:600;font-size:14px;margin-bottom:6px;}
+.cert-card p{font-family:var(--mono);font-size:11.5px;color:var(--ink-dim);}
+.cert-card .res{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--signal);border:1px solid rgba(141,255,106,0.3);border-radius:2px;padding:4px 9px;}
+
+footer{background:var(--panel);padding:70px 0 30px;}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--stroke);}
+footer h2{font-size:var(--h2);max-width:460px;margin-bottom:22px;text-transform:uppercase;}
+footer .prompt{font-family:var(--mono);color:var(--signal);font-size:13px;margin-bottom:14px;}
+.foot-links{display:flex;flex-direction:column;gap:12px;align-items:flex-start;font-family:var(--mono);}
+.foot-links a{font-size:14.5px;color:var(--ink-dim);border-bottom:1px solid transparent;}
+.foot-links a:hover{color:var(--signal);border-color:var(--signal);}
+.foot-col h4{font-family:var(--mono);font-size:11px;color:var(--ink-faint);margin-bottom:14px;letter-spacing:0.03em;}
+.foot-col a{display:block;font-family:var(--mono);font-size:13px;color:var(--ink-dim);margin-bottom:10px;}
+.foot-col a:hover{color:var(--signal);}
+.copy{padding-top:24px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+@media(max-width:860px){
+  .hero .w,.about-grid,.foot-grid{grid-template-columns:1fr;}
+  .work-item{grid-template-columns:1fr;gap:10px;}
+  .work-item .go{display:none;}
+  .tool-row{grid-template-columns:1fr;gap:4px;}
+  .cert-grid{grid-template-columns:1fr 1fr;}
+  .nav-links{display:none;}
+  .sec-head{flex-direction:column;align-items:flex-start;}
+  .sec-head p{text-align:left;}
+}
+@media(max-width:520px){.cert-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="strip">
+  <div class="w">
+    <span><span class="dot"></span>PORTOFOLIO // DATA_ANALYST</span>
+    <a href="https://izanafza13.github.io/portoHamizan/">PORTOFOLIO_UTAMA</a>
+  </div>
+</div>
+
+<nav>
+  <div class="w">
+    <div class="brand"><span class="id"></span> H.AFZA_AL_ISYRAQI</div>
+    <div class="nav-links">
+      <a href="#proyek">PROYEK</a>
+      <a href="#alat">ALAT</a>
+      <a href="#sertifikasi">SERTIFIKASI</a>
+      <a href="#kontak">KONTAK</a>
+    </div>
+    <a class="btn btn-solid nav-cta" href="#kontak">HUBUNGI_SAYA</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="frame"></div>
+  <div class="w">
+    <div>
+      <div class="tag-line">// PORTOFOLIO_DATA_ANALYST <span class="cursor"></span></div>
+      <h1>Analisis<br>Data</h1>
+      <p class="role">Kumpulan project analisis data oleh Hamizan Afza Al Isyraqi: dari cleaning dan eksplorasi di R, query SQL, sampai dashboard Power BI. Beberapa berasal dari studi kasus pelatihan dan ditandai jelas di setiap project.</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="#proyek">LIHAT_PROJECT</a>
+        <a class="btn" href="#kontak">KONTAK</a>
+      </div>
+      <div class="hero-meta">
+        <span>ALAT <b>R / SQL / PYTHON / POWER_BI</b></span>
+        <span>HACKATHON <b>#25_DARI_335</b></span>
+        <span>PREDIKAT <b>EXPERT_x2</b></span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <span class="corner tl"></span><span class="corner br"></span>
+      <span class="tag">● PROJECT_TERBARU // RITEL</span>
+      <div class="console">
+        <span class="k">&gt;</span> aggregate(Jumlah, by = Bulan_Tahun)<br>
+        <span class="k">&gt;</span> april_2020: <span class="ok">1.753</span> barang<br>
+        <span class="k">&gt;</span> juni_2020: <span class="ok">170</span> barang<br>
+        <span class="k">&gt;</span> selisih: <span class="ok">-90,3%</span>
+      </div>
+      <p class="note">Studi kasus data transaksi toserba dari DQLab, dianalisis di R.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="w about-grid">
+    <p class="about-lead">Di studi kasus ritel, penjualan turun dari 1.753 ke 170 barang dalam dua bulan, sementara rata-rata stok masuk sekitar 4.000 barang. Analisis dimulai dari <span class="hl">melihat selisih itu dengan jelas.</span></p>
+    <div class="about-side">
+      <div class="about-stat"><div class="v">98,82%</div><div class="l">akurasi model skripsi, ensemble machine learning untuk klasifikasi lahan sawah</div></div>
+      <div class="about-stat"><div class="v">#25</div><div class="l">dari 335 peserta Excel Hackathon DQLab, Top 100 Finalist</div></div>
+      <div class="about-stat"><div class="v">x2</div><div class="l">predikat Expert dari Karirnex: Data Analyst dan Microsoft Office</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="proyek">
+  <div class="w">
+    <div class="sec-head">
+      <div>
+        <span class="num">SEC.01 :: PROJECT</span>
+        <h2>Analisis dan laporan</h2>
+      </div>
+      <p>KLIK_ITEM<br>UNTUK_MEMBUKA</p>
+    </div>
+
+    <div class="work-list">
+      <a class="work-item" href="R/ritel-toserba/">
+        <div class="role">STUDI_KASUS_DQLAB</div>
+        <div>
+          <h3>Eksplorasi Data Ritel Mitra Toserba Xera</h3>
+          <p>Import dan cleaning data transaksi, lalu analisis penjualan per bulan, perbandingan stok masuk dengan penjualan, dan hubungan harga barang dengan jumlah transaksi. Temuan: penjualan menurun April ke Juni 2020, stok masih melimpah, dan barang Rp10.000 sampai Rp15.000 paling laku.</p>
+          <div class="chips"><span class="chip">R</span><span class="chip">QUARTO</span><span class="chip">DATA_CLEANING</span><span class="chip">VISUALISASI</span></div>
+        </div>
+        <div class="go">[ BUKA ]</div>
+      </a>
+
+      <a class="work-item" href="https://lnkd.in/p/g9HQG9rE" target="_blank" rel="noopener">
+        <div class="role">MINI_PROJECT_KARIRNEX</div>
+        <div>
+          <h3>Query, Laporan, dan Dashboard Penjualan Showroom Mobil</h3>
+          <p>Mini project Bootcamp Data Analyst: menyusun query SQL di Google BigQuery, membuat laporan, dan membangun dashboard penjualan di Power BI. Postingan lengkapnya ada di LinkedIn.</p>
+          <div class="chips"><span class="chip">SQL</span><span class="chip">BIGQUERY</span><span class="chip">POWER_BI</span></div>
+        </div>
+        <div class="go">[ LINKEDIN ]</div>
+      </a>
+
+      <a class="work-item" href="https://izanafza13.github.io/portoHamizan/#kerja">
+        <div class="role">RISET_SKRIPSI</div>
+        <div>
+          <h3>SoilML: Klasifikasi Kesesuaian Lahan Sawah</h3>
+          <p>Preprocessing data lapangan dari Kecamatan Kamal, Bangkalan, pelabelan kelas dengan fuzzy logic, lalu perbandingan Decision Tree, Random Forest, dan XGBoost pada berbagai skenario pembagian data. Akurasi terbaik 98,82% (Soft Voting, split 80:20).</p>
+          <div class="chips"><span class="chip">PYTHON</span><span class="chip">MACHINE_LEARNING</span><span class="chip">PREPROCESSING</span></div>
+        </div>
+        <div class="go">[ DETAIL ]</div>
+      </a>
+
+      <div class="work-item ghost">
+        <div class="role">SEGERA</div>
+        <div>Project berikutnya ditambahkan di sini. Salin satu blok &lt;a class="work-item"&gt; di atas lalu ubah isinya.</div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="alat">
+  <div class="w">
+    <div class="sec-head">
+      <div>
+        <span class="num">SEC.02 :: ALAT</span>
+        <h2>Dipakai di mana</h2>
+      </div>
+      <p>ALAT_&amp;_PROJECT<br>YANG_MEMAKAINYA</p>
+    </div>
+    <div class="tools">
+      <div class="tool-row"><div class="n">R</div><div class="u">Cleaning, agregasi, dan visualisasi data ritel (project ritel)</div></div>
+      <div class="tool-row"><div class="n">SQL / BigQuery</div><div class="u">Query data penjualan showroom mobil (mini project Karirnex)</div></div>
+      <div class="tool-row"><div class="n">Power BI</div><div class="u">Dashboard penjualan showroom mobil (mini project Karirnex)</div></div>
+      <div class="tool-row"><div class="n">Python</div><div class="u">Preprocessing dan model ensemble di skripsi SoilML</div></div>
+      <div class="tool-row"><div class="n">Excel</div><div class="u">Pivot Table, VLOOKUP dan INDEX MATCH, Macro VBA; Excel Hackathon DQLab</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="sertifikasi">
+  <div class="w">
+    <div class="sec-head">
+      <div>
+        <span class="num">SEC.03 :: SERTIFIKASI</span>
+        <h2>Penunjang analisis data</h2>
+      </div>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card"><h4>Excel Hackathon: Build Inventory Analytics &amp; Planning</h4><p>DQLAB // 12 SEPTEMBER 2026</p><span class="res">TOP_100 // #25_DARI_335</span></div>
+      <div class="cert-card"><h4>Bootcamp Data Analyst</h4><p>KARIRNEX // SEPTEMBER 2026</p><span class="res">EXPERT</span></div>
+      <div class="cert-card"><h4>Bootcamp Sertifikasi Microsoft Office</h4><p>KARIRNEX // AGUSTUS 2026</p><span class="res">EXPERT</span></div>
+      <div class="cert-card"><h4>Data - AI Agent for Data Analysis</h4><p>IBM SKILLSBUILD x HACKTIV8 // 2026</p><span class="res">SKOR_AKHIR_95.35</span></div>
+      <div class="cert-card"><h4>Data Science Fundamentals</h4><p>DQLAB // 2024</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="kontak">
+  <div class="w">
+    <div class="foot-grid">
+      <div>
+        <div class="prompt">&gt; transmit_message()</div>
+        <h2>Ada data yang perlu dirapikan dan dibaca?</h2>
+        <div class="foot-links">
+          <a href="mailto:hamizanafza13@gmail.com">hamizanafza13@gmail.com</a>
+          <a href="https://linkedin.com/in/izanafza" target="_blank" rel="noopener">linkedin.com/in/izanafza</a>
+          <a href="https://github.com/Izanafza13" target="_blank" rel="noopener">github.com/Izanafza13</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>PETA_HALAMAN</h4>
+        <a href="#proyek">PROJECT</a>
+        <a href="#alat">ALAT</a>
+        <a href="#sertifikasi">SERTIFIKASI</a>
+        <a href="https://izanafza13.github.io/portoHamizan/">PORTOFOLIO_UTAMA</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 HAMIZAN_AFZA_AL_ISYRAQI</span>
+      <span>DATA_ANALYST_PORTFOLIO</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
