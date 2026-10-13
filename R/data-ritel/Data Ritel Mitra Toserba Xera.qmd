@@ -3,10 +3,10 @@ title: "Data Ritel Mitra Toserba Xera"
 author: "Izanafza"
 format:
   html:
-    embed-resources: true
+    theme: darkly
     css: style.css
+    embed-resources: true
     code-copy: true
-    toc: false
 ---
 
 # Eksplorasi Data Ritel menggunakan R
